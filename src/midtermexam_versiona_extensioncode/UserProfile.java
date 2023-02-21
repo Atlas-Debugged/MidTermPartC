@@ -12,10 +12,9 @@ package midtermexam_versiona_extensioncode;
  * Students are reminded to add themselves as modifiers when editing the
  * code.
  * @author dancye, 2019
- */
-public class UserProfile 
-{
-    
+ */import java.util.Scanner;
+public class UserProfile {
+
     private String userID;//the userID
     private String genre;// the user's preferred genre of movie
     private String[] genres = {"Comedy", "Drama", "Action", "Mystery"};//available genres of movies
@@ -60,9 +59,40 @@ public class UserProfile
     public void setGenre(String genre) {
         this.genre = genre;
     }
+}
+
+
+
+     class TestUserProfile {
+
+    public static void main(String[] args) {
+        
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Please enter your name:");
+        String name = scn.nextLine();
+
+        
+        System.out.println("Please choose your favourite genre from the following list:");
+        String[] genres = {"Comedy", "Drama", "Action", "Mystery","Thriller","Horror","Rom-Com","Western","Foreign","Documentary"};
+        for (int i = 0; i < genres.length; i++) {
+            System.out.println((i + 1) + ". " + genres[i]);
+        }
+
+        int choice = scn.nextInt();
+        String genre;
+
+        if (choice >= 1 && choice <= genres.length) {
+            genre = genres[choice - 1];
+        } else {
+            genre = "Unknown";
+        }
+
+        // Create user profile
+        UserProfile userProfile = new UserProfile(name, genre);
+        System.out.println("User profile created:");
+        System.out.println(userProfile.getUserID());
+        System.out.println(userProfile.getGenre());
+    }
     
-    
-    
-    
-    
-}//end class
+}
+
