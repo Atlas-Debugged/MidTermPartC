@@ -12,7 +12,8 @@ package midtermexam_versiona_extensioncode;
  * Students are reminded to add themselves as modifiers when editing the
  * code.
  * @author dancye, 2019
- */import java.util.Scanner;
+ */
+import java.util.Scanner;
 public class UserProfile {
 
     private String userID;//the userID
